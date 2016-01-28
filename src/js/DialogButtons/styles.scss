@@ -1,0 +1,26 @@
+@import 'colors';
+
+.dialog-buttons {
+	text-align: right;
+	margin-top: 8px;
+	
+	&__button {
+		display: inline-block;
+		padding: 4px 8px;
+		font-weight: 500;
+		color: $color-primary;
+		border-radius: 2px;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: background-color 200ms;
+		& + & {
+			margin-left: 8px;
+		}
+		&:hover {
+			background-color: #eee;
+		}
+		&:active {
+			background-color: #ddd;
+		}
+	}
+}

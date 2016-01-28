@@ -1,0 +1,32 @@
+@import 'colors';
+
+.tabs {
+	&__tab-wrapper {
+		background-color: $color-primary;
+	}
+	&__tab-container {
+		width: 1024px;
+		margin: auto;
+		padding-top: 40px;
+		color: $color-textPrimary;
+	}
+
+	&__tab {
+		display: inline-block;
+		padding: 8px 16px;
+		margin: 0 2px;
+		cursor: pointer;
+		border-radius: 4px 4px 0 0;
+		transition: all 100ms;
+		&:hover,
+		&--active { 
+			color: $color-primary;
+			background-color: $color-textPrimary;
+		}
+	}
+
+	&__content-wrapper {
+		width: 1024px;
+		margin: 20px auto 0;
+	}
+}
