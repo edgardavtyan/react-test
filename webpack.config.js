@@ -30,11 +30,11 @@ module.exports = {
 				test: /\.scss?$/,
 				exclude: /(node_modules|bower_components)/,
 				loaders: ['style', 'css', 'sass'],
-			}
-		]
+			},
+		],
 	},
 	sassLoader: {
-		includePaths: [path.resolve(__dirname, "src/scss")],
+		includePaths: [path.resolve(__dirname, 'src/scss')],
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
@@ -44,5 +44,5 @@ module.exports = {
 		hot: true,
 		host: '0.0.0.0',
 		stats: { colors: true },
-	}
+	},
 };

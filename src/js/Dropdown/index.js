@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 const DropdownList = React.createClass({
 	getInitialState() {
-		return { 
+		return {
 			isOpen: false,
 			items: this.props.children,
 			selectedItemIndex: this.props.selectedItemIndex,
@@ -22,7 +22,7 @@ const DropdownList = React.createClass({
 	toggle() {
 		this.setState({ isOpen: !this.state.isOpen });
 	},
-	hide(event) {
+	hide() {
 		this.setState({ isOpen: false });
 	},
 	onItemClicked(index) {
@@ -40,20 +40,18 @@ const DropdownList = React.createClass({
 			{ [this.props.headerOpenClass]: this.state.isOpen });
 
 		return <div className={this.props.className} onBlur={this.hide} tabIndex="100">
-			<div className={headerClass} 
+			<div className={headerClass}
 			     onClick={this.toggle}>
 				<div className={this.props.titleClass}
 				     style={this.style.title}>{this.state.items[this.state.selectedItemIndex]}</div>
 				<div className={this.props.icon} style={this.style.arrow}>▼</div>
 				<div style={this.style.clearfix}></div>
 			</div>
-			<div className={this.props.itemsContainerClass} 
+			<div className={this.props.itemsContainerClass}
 			     style={{ display: this.state.isOpen ? 'block' : 'none', clear: 'both' }}>
-				{this.props.children.map((child, i) => 
-					<div className={this.props.itemClass} 
-					     onClick={this.onItemClicked.bind(this, i)} key={i}>
-					    {child}
-					</div>)}
+				{this.props.children.map((child, i) =>
+					<div className={this.props.itemClass}
+					     onClick={this.onItemClicked.bind(this, i)} key={i}>{child}</div>)}
 			</div>
 		</div>;
 	},

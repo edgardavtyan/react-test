@@ -7,9 +7,9 @@ module.exports = React.createClass({
 			.map(name => name[0].toUpperCase() + name.substr(1).toLowerCase());
 
 		return <div className="dialog-buttons">
-			{buttonNames.map(button => {
-				return <div className="dialog-buttons__button" onClick={this.props['on' + button]}>{button}</div>
-			})}
+			{buttonNames.map(button =>
+				<div className="dialog-buttons__button"
+				     onClick={this.props[`on${button}`]}>{button}</div>)}
 		</div>;
 	},
 });

@@ -31,9 +31,9 @@ module.exports = React.createClass({
 		return <div className={this.props.className}>
 			<div className={this.props.tabWrapperClass}>
 				<div className={this.props.tabContainerClass}>
-					{this.state.tabItems.map((item, i) => 
-						<div className={getTabClass(this, i)} key={i} 
-					    	 onClick={this.tabClicked.bind(this, i)}>{item}</div>)}
+					{this.state.tabItems.map((item, i) =>
+						<div className={getTabClass(this, i)} key={i}
+						     onClick={this.tabClicked.bind(this, i)}>{item}</div>)}
 				</div>
 			</div>
 			<div className={this.props.contentWrapperClass}>
@@ -48,6 +48,6 @@ module.exports = React.createClass({
 
 function getTabClass(context, tabIndex) {
 	return classnames(
-		context.props.tabClass, 
+		context.props.tabClass,
 		{ [context.props.tabActiveClass]: tabIndex === context.state.activeTabIndex });
 }

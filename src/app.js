@@ -34,7 +34,7 @@ var App = React.createClass({
 					<div>sixth</div>
 				</Dropdown>
 			</div>
-		</div>
+		</div>;
 	},
 });
 
